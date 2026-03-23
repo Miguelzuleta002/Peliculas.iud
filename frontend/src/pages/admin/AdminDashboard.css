@@ -1,0 +1,173 @@
+.admin-layout {
+    display: flex;
+    gap: 30px;
+    margin-top: 100px;
+    /* offset for navbar */
+    min-height: calc(100vh - 100px);
+}
+
+.admin-sidebar {
+    width: 280px;
+    border-radius: var(--border-radius);
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    position: sticky;
+    top: 100px;
+    border: 1px solid var(--glass-border);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 25px 20px;
+    border-bottom: 1px solid var(--glass-border);
+    margin-bottom: 15px;
+}
+
+.sidebar-header h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 25px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+.sidebar-link.active {
+    color: var(--primary);
+    background-color: rgba(0, 230, 118, 0.05);
+    border-left-color: var(--primary);
+}
+
+.admin-content {
+    flex-grow: 1;
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+}
+
+/* Formularios Generales del CRUD */
+.crud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.crud-form {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.crud-table-container {
+    overflow-x: auto;
+}
+
+.crud-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.crud-table th,
+.crud-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.crud-table th {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.crud-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: var(--transition);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.btn-icon.edit:hover {
+    background: rgba(0, 118, 255, 0.2);
+    color: #0076ff;
+}
+
+.btn-icon.delete:hover {
+    background: rgba(255, 51, 102, 0.2);
+    color: var(--danger);
+}
