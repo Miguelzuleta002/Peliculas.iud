@@ -1,12 +1,7 @@
-# 🎬 Backend - Catálogo Institucional de Películas y Series
+# 🎬 Catálogo Institucional de Películas y Series (IU Digital) - Stack MERN Completo
 
-Este proyecto es el **Backend (API REST)** desarrollado para la Institución Universitaria Digital de Antioquia (IU Digital). Tiene como propósito gestionar la base de datos de una futura Aplicación Web orientada al entretenimiento de docentes, estudiantes, colaboradores y público en general, permitiéndoles visualizar películas y series online de forma gratuita.
 
-> **Nota del Proyecto:** La directiva estipuló el diseño de una aplicación estilo "Cuevana" pero estrictamente legal y sin piratería, mediante licencias obtenidas por el Alma Mater.
-
----
-
-## 🏗️ Arquitectura y Tecnologías
+## 🎯 Propósito del Proyecto
 Por recomendación del equipo de tecnología de la institución, el sistema se construye bajo una **arquitectura monolítica** estructurada, trabajando de manera separada el Frontend del Backend.
 
 El proyecto está construido bajo el stack **MERN** (enfocado en el Backend):
@@ -64,4 +59,16 @@ Durante esta fase del desarrollo backend, la API permite la comunicación comple
    * Lógica de eliminación (DELETE) programada mediante **Borrado Lógico (Soft-delete)** para Director y Productora para mantener el historial (cambiando su estado a 'Inactivo').
    * **Borrado Físico (Hard-delete)** programado para Tipos y Medias, conforme a la estructura del diseño.
 
-Toda la lógica puede ser consumida y probada libremente mediante clientes REST como Postman, Thunder Client o Insomnia de cara a preparar la integración con el futuro Frontend.
+Toda la lógica puede ser consumida y probada libremente mediante clientes REST como Postman, Thunder Client o Insomnia de cara a la integración con el Frontend.
+
+---
+
+## 💻 Frontend - Interfaz de Usuario (React SPA)
+
+Como segunda etapa fundamental arquitectónica del caso de estudio, se construyó la vista del cliente utilizando **React** apoyado en el potente empaquetador **Vite**, obteniendo una Single Page Application conectada en tiempo real hacia Node.js mediante **Axios**.
+
+### Características Principales del Frontend
+1. **Interfaz de Catálogo Modular:** Una cuadrícula visual inspirada en grandes plataformas de streaming. Permite la visualización de los elementos mediante tarjetas responsivas que, asistadas por React Router DOM, separan fluidamente las categorías en rutas distintas (`/peliculas` y `/series`).
+2. **Detalles Inmersivos (Movie Detail):** Se habilitó una vista completa generada dinámicamente (`/pelicula/:id`) que despliega la sinopsis, metadata cruzada con de la DB (Director, Tipo, Productora) y un enlace para reproducir el elemento.
+3. **Panel de Administración Total (CRUD):** 5 completas pantallas interactivas exclusivas para uso administrativo de la Universidad para Gestionar todas las colecciones. Los formularios de películas aplican las reglas de negocio estrictas auto-completando listas desplegables únicamente con entidades que el servidor reporte en estado **Activo**.
+4. **Diseño Visual UX/UI (Cuevana-style):** Implementación hecha 100% a la medida (Vanilla CSS) respetando las bases del Glassmorphism, variables semánticas, fondos difusos para modo oscuro y fluidez superior.
