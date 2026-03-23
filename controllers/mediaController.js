@@ -51,6 +51,25 @@ exports.obtenerMedias = async (req, res) => {
     }
 };
 
+exports.obtenerMediaPorId = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const media = await Media.findById(id)
+            .populate('genero', 'nombre estado')
+            .populate('director', 'nombres estado')
+            .populate('productora', 'nombre estado')
+            .populate('tipo', 'nombre');
+
+        if (!media) {
+            return res.status(404).json({ mensaje: 'Producción no encontrada' });
+        }
+
+        res.status(200).json(media);
+    } catch (error) {
+        res.status(500).json({ mensaje: 'Error al obtener la producción', error });
+    }
+};
+
 exports.actualizarMedia = async (req, res) => {
     try {
         const { id } = req.params;
