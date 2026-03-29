@@ -1,0 +1,45 @@
+# 🎬 Plan de Implementación: Frontend del Catálogo (IU Digital)
+
+## 📌 Objetivo
+Construir la interfaz de usuario (Frontend) de la plataforma de *streaming* de la Institución Universitaria Digital de Antioquia utilizando **React**. El objetivo es crear una aplicación "tipo Cuevana" que sea profesional, moderna, intuitiva y visualmente impactante, conectándola directamente con el Backend (API REST) que ya hemos construido.
+
+## 🏗️ Arquitectura y Tecnologías
+Para lograr una aplicación rápida y moderna, utilizaremos las siguientes herramientas del ecosistema React:
+
+1. **Vite + React:** En lugar del antiguo *Create React App*, utilizaremos **Vite**. Es la herramienta estándar actual en la industria por ser extremadamente rápida al compilar y optimizada para el desarrollo moderno.
+2. **React Router DOM:** Nos permitirá crear una navegación fluida (Single Page Application - SPA) sin recargar la página. Tendremos rutas como `/` (Inicio con el catálogo) y `/admin` (Panel de administración).
+3. **Vanilla CSS Modeno (CSS3):** Para garantizar un diseño premium, único y 100% a medida, utilizaremos Vanilla CSS avanzado. Haremos uso de CSS Variables, Flexbox, y CSS Grid. Esto nos da control total sobre animaciones y estilos sin sobrecargar el código con librerías externas.
+4. **Fetch API / Axios:** Para conectar el Frontend con nuestro Backend local (`http://localhost:4000`), realizando las peticiones HTTP que ya programamos (GET, POST, etc.).
+
+## 🎨 Diseño Visual y Experiencia de Usuario (UX/UI)
+El diseño estará fuertemente inspirado en plataformas líderes de *streaming* (como Netflix o Disney+), enfocado en la inmersión del usuario:
+
+* **Tema Oscuro (Dark Theme):** Fondo profundo (ej. `#141414`) que resalta las portadas de las películas y reduce la fatiga visual.
+* **Colores de Acento:** Utilizaremos colores vibrantes (ej. degradados sutiles o un color institucional) para los botones principales y llamadas a la acción.
+* **Micro-interacciones:** Las tarjetas de las películas tendrán efectos de ampliación (escala) al pasar el ratón (*hover*), transiciones suaves e imágenes de alta calidad.
+* **Efectos "Glassmorphism":** Barras de navegación con desenfoque de fondo y transparencias para dar un toque elegante y moderno.
+
+## 🛠️ Estructura de la Aplicación (Módulos Flexibles)
+
+La aplicación se dividirá en dos grandes secciones:
+
+### 1. Vista Pública (Estudiantes y Docentes)
+Es la cara principal de la Institución. 
+* **Hero Section:** Un banner gigante destacado con la película principal del momento, título grande, una breve sinopsis y botones de "Ver ahora" o "Más información".
+* **Filas/Carruseles de Categorías:** Las películas se agruparán dinámicamente según su Género (Acción, Ciencia Ficción) o Tipo (Series, Películas) en un formato de cuadrícula o carrusel horizontal.
+* **Detalle de la Producción:** Un modal o vista donde se despliega toda la información que estructuramos en el backend (Director, Productora, Año, Sinopsis completa).
+
+### 2. Panel de Administración (Gestores de la Universidad)
+Una sección oculta o separada (ej. ruta `/admin`) exclusiva para crear el contenido.
+* Interfaces adaptadas para consumir las rutas `POST`, `PUT` y `DELETE` de nuestros 5 módulos (Géneros, Directores, Productoras, Tipos y Medias).
+* Formularios intuitivos con listas desplegables (Selects) que se auto-completan pidiendo al Backend únicamente los elementos que estén en estado "Activo", tal y como lo exige la regla de negocio institucional.
+
+## 👣 Pasos Exactos de Ejecución
+1. *Inicialización:* Ejecutar desde la terminal la creación del proyecto React con Vite en una carpeta separada del backend (ej. `frontend-catalogo`).
+2. *Configuración Estructural:* Crear las carpetas `/components`, `/pages`, `/services` y `/styles`.
+3. *Diseño del Sistema de Estilos:* Configurar el archivo global `index.css` con la paleta de colores oscuros, tipografías modernas (ej. "Inter" o "Outfit" de Google Fonts) y utilidades de reseteo.
+4. *Construcción de Componentes:* Empezar diseñando el `Navbar` (Barra superior) y una `MovieCard` (Tarjeta de Película) atractiva.
+5. *Conexión con el Backend:* Programar los servicios en React que llamarán a nuestro Node.js para pedirle la lista real de películas de la base de datos de MongoDB.
+
+> [!IMPORTANT]  
+> **Requisito Previos:** Antes de conectar e interactuar con el Frontend por completo, necesitaremos ingresar manualmente al menos un (1) de cada módulo en la base de datos (con Postman o Thunder Client) para que React tenga datos reales que dibujar en la pantalla, o bien, empezar a construir el "Panel de Administración" primero para ingresarlos desde allí de forma fácil.
