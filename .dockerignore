@@ -1,0 +1,8 @@
+node_modules
+npm-debug.log
+frontend
+.env
+.git
+.gitignore
+README.md
+implementation_plan.md.resolved
