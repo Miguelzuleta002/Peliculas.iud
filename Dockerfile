@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 4000
 
 # Iniciamos Node.js apuntando al punto de entrada
-CMD ["node", "index.js"]
+CMD ["node", "Index.js"]
